@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sessions — Same Streets Presents</title>
+  <meta name="description" content="Same Streets Sessions: raw performances, unexpected arrangements, and conversations with the artists behind the songs.">
+  <meta name="theme-color" content="#0e0c0a">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,650;1,9..144,500;1,9..144,650&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" data-header>
+    <a class="logo" href="index.html">
+      <svg class="logo-mark" viewBox="0 0 42 42" aria-hidden="true">
+        <rect x="1.5" y="1.5" width="39" height="39" rx="11" fill="none" stroke="rgba(246,239,230,.35)"/>
+        <path d="M9 17h24M9 25h24" stroke="#f0b429" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="7 5"/>
+      </svg>
+      <span class="logo-text"><strong>Same Streets</strong><small>Presents</small></span>
+    </a>
+    <nav id="site-nav" class="site-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="shows.html">Shows</a>
+      <a href="sessions.html" aria-current="page">Sessions</a>
+      <a href="get-involved.html">Get Involved</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-primary nav-cta" href="get-involved.html#artist-form">Submit your music</a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero" data-grade="teal">
+      <div class="page-hero-media" style="background-image:url('assets/photos/guitar.jpg')"></div>
+      <div class="wrap page-hero-copy stack">
+        <p class="eyebrow">Sessions</p>
+        <h1>The songs. The stories. The people.</h1>
+        <p class="lede">Same Streets Sessions is a chance to experience music a little differently.</p>
+        <p class="lede">Raw performances, unexpected arrangements, and conversations with the artists behind the songs.</p>
+      </div>
+    </section>
+
+    <section class="section" id="latest">
+      <div class="wrap session-grid">
+        <div class="player-frame" data-reveal>
+          <img data-session-image src="assets/photos/mic.jpg" alt="A guitarist singing into a microphone with a drummer behind him.">
+          <button class="play" type="button" data-open-session>Play</button>
+        </div>
+        <div class="stack copy" data-reveal style="--d:90ms">
+          <p class="eyebrow">Featured session</p>
+          <p class="badge" data-session-artist>Coming online</p>
+          <h2 data-session-title>The latest session.</h2>
+          <p data-session-intro>The artist, the performance, and a short introduction will live in this frame. Until the first cut is ready, the room is open.</p>
+          <p><button class="btn btn-primary" type="button" data-open-session>Watch now <span aria-hidden="true">→</span></button></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="library" style="padding-top:0">
+      <div class="wrap">
+        <div data-reveal>
+          <p class="eyebrow">Session library</p>
+          <h2>Find something new.</h2>
+          <p class="copy" style="margin-top:.8rem; max-width:46rem;">Discover performances from artists making music in our community and beyond.</p>
+          <div class="filters" role="group" aria-label="Filter sessions">
+            <button class="chip is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="chip" type="button" data-filter="live" aria-pressed="false">Live</button>
+            <button class="chip" type="button" data-filter="acoustic" aria-pressed="false">Acoustic</button>
+            <button class="chip" type="button" data-filter="conversation" aria-pressed="false">Conversation</button>
+          </div>
+        </div>
+        <div class="library-grid" data-library>
+          <article class="session-card" data-tags="live" data-reveal>
+            <img src="assets/photos/stage.jpg" alt="A full band under stage lights.">
+            <div class="card-body">
+              <p class="badge">Open slot · Live</p>
+              <h3>Raw performances</h3>
+              <p>Full rooms, live vocals, and the take that happens when the song is still breathing.</p>
+            </div>
+          </article>
+          <article class="session-card" data-tags="acoustic" data-reveal style="--d:70ms">
+            <img src="assets/photos/guitar.jpg" alt="A vintage microphone against warm out-of-focus lights.">
+            <div class="card-body">
+              <p class="badge">Open slot · Acoustic</p>
+              <h3>Unexpected arrangements</h3>
+              <p>Songs pulled apart and played closer than the recording ever got.</p>
+            </div>
+          </article>
+          <article class="session-card" data-tags="conversation" data-reveal style="--d:120ms">
+            <img src="assets/photos/mic.jpg" alt="A guitarist and drummer performing under blue and amber lights.">
+            <div class="card-body">
+              <p class="badge">Open slot · Conversation</p>
+              <h3>The people behind the songs</h3>
+              <p>A little time with the artist, not just the chorus.</p>
+            </div>
+          </article>
+          <article class="session-card" data-tags="acoustic live" data-reveal>
+            <img src="assets/photos/stage.jpg" alt="Hands in the air in front of a stage washed in amber light.">
+            <div class="card-body">
+              <p class="badge">Open slot · Stripped</p>
+              <h3>Stripped-down performances</h3>
+              <p>Less production. More of the person who wrote it.</p>
+            </div>
+          </article>
+          <article class="session-card" data-tags="live" data-reveal style="--d:70ms">
+            <img src="assets/photos/club.jpg" alt="Lasers and colored light over a packed room.">
+            <div class="card-body">
+              <p class="badge">Open slot · Live</p>
+              <h3>Live recordings</h3>
+              <p>A record of the night that doesn't sand off the room.</p>
+            </div>
+          </article>
+          <article class="session-card" data-tags="conversation live" data-reveal style="--d:120ms">
+            <img src="assets/photos/singer.jpg" alt="A performer leaning into a song.">
+            <div class="card-body">
+              <p class="badge">Open slot · Spotlight</p>
+              <h3>A closer look</h3>
+              <p>Artists making music worth hearing, given more than a few seconds.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section band-cream" id="spotlights">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <div>
+            <p class="eyebrow">Artist spotlights</p>
+            <h2>There's a story behind every sound.</h2>
+            <p class="copy">We believe discovering an artist should mean more than hearing thirty seconds of a song. Our spotlights introduce the people behind the music, the things that drive them, and the stories worth sharing.</p>
+          </div>
+        </div>
+        <div class="spot-grid">
+          <article class="spot-card" data-reveal>
+            <img src="assets/photos/mic.jpg" alt="A guitarist singing into a microphone on a lit stage.">
+            <div class="card-body">
+              <p class="badge">New voices</p>
+              <h3>Something to say</h3>
+              <p>Musicians the room hasn't met yet, with songs that already know where they're going.</p>
+              <p style="margin-top:1rem"><a class="text-link" href="get-involved.html#artist-form">Submit your music</a></p>
+            </div>
+          </article>
+          <article class="spot-card" data-reveal style="--d:80ms">
+            <img src="assets/photos/stage.jpg" alt="A crowd facing a bright stage.">
+            <div class="card-body">
+              <p class="badge">Familiar faces</p>
+              <h3>Heard up close</h3>
+              <p>Artists this community already loves, given a different kind of room.</p>
+              <p style="margin-top:1rem"><a class="text-link" href="get-involved.html#artist-form">Submit your music</a></p>
+            </div>
+          </article>
+          <article class="spot-card" data-reveal style="--d:140ms">
+            <img src="assets/photos/lights.jpg" alt="A crowd facing a stage washed in purple and white light.">
+            <div class="card-body">
+              <p class="badge">More attention</p>
+              <h3>Worth staying for</h3>
+              <p>Sounds that deserve more than a skip, a scroll, or a half-finished chorus.</p>
+              <p style="margin-top:1rem"><a class="text-link" href="get-involved.html#artist-form">Submit your music</a></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="closer" id="submit">
+      <div class="wrap stack">
+        <p class="eyebrow">Artist invitation</p>
+        <h2>Your music belongs somewhere.</h2>
+        <p class="lede">We're always looking for artists with something to share.</p>
+        <p class="lede">You don't need a huge following, a record deal, or a perfect production.</p>
+        <p class="pull">You need music you believe in.</p>
+        <p>There is no fee to apply or be selected for a Same Streets Session or artist spotlight.</p>
+        <p><a class="btn btn-primary" href="get-involved.html#artist-form">Submit your music <span aria-hidden="true">→</span></a></p>
+        <p class="quiet">Participation is subject to selection and scheduling availability.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="footer-brand">Same Streets Presents</p>
+        <p class="footer-tag">More Room for Music.</p>
+        <p>Built for the artists. Built for the audience. Built together.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="about.html">About</a>
+        <a href="shows.html">Shows</a>
+        <a href="sessions.html">Sessions</a>
+        <a href="get-involved.html">Get Involved</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div>
+        <p class="eyebrow">Follow the noise.</p>
+        <div class="socials">
+          <a class="social" data-net="instagram" data-soon href="#instagram">Instagram</a>
+          <a class="social" data-net="facebook" data-soon href="#facebook">Facebook</a>
+          <a class="social" data-net="tiktok" data-soon href="#tiktok">TikTok</a>
+          <a class="social" data-net="youtube" data-soon href="#youtube">YouTube</a>
+        </div>
+        <p><a class="mail" href="mailto:samestreetspresents@gmail.com">samestreetspresents@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <p>Same Streets. New Scene.</p>
+      <nav class="legal-nav" aria-label="Legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+        <a href="permissions.html">Content Submission Permissions</a>
+      </nav>
+      <p>© <span data-year>2026</span> Same Streets Presents</p>
+    </div>
+  </footer>
+
+  <dialog class="modal" id="session-modal">
+    <div class="modal-top"><button class="modal-close icon-btn" type="button" data-close aria-label="Close">×</button></div>
+    <div data-session-frame></div>
+    <div class="stack" data-session-fallback>
+      <p class="eyebrow">Same Streets Sessions</p>
+      <h3>Watch now — as soon as it's cut.</h3>
+      <p>The latest session will play in this window. There is no fee to be considered, and being chosen depends on fit and the calendar.</p>
+      <p><a class="btn btn-primary" href="get-involved.html#artist-form">Submit your music <span aria-hidden="true">→</span></a></p>
+    </div>
+  </dialog>
+  <script src="js/main.js"></script>
+</body>
+</html>
