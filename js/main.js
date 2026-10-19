@@ -77,7 +77,14 @@ function initHero() {
   const thumbs = [...hero.querySelectorAll(".hero-thumb")];
   const progress = hero.querySelector(".hero-progress span");
   const currentEl = hero.querySelector("[data-slide-current]");
+  const caption = hero.querySelector("[data-hero-caption]");
   const pauseBtn = hero.querySelector("[data-slide-pause]");
+  const lines = [
+    "The room · Cleveland, Tennessee",
+    "Up close · the artist",
+    "Turned up · the noise",
+    "The night · show up"
+  ];
   const duration = 7000;
   let index = 0;
   let timer = 0;
@@ -103,6 +110,14 @@ function initHero() {
       thumb.setAttribute("aria-current", active ? "true" : "false");
     });
     if (currentEl) currentEl.textContent = String(index + 1).padStart(2, "0");
+    if (caption) {
+      const kicker = caption.parentElement;
+      kicker.classList.add("is-swapping");
+      window.setTimeout(() => {
+        caption.textContent = lines[index];
+        kicker.classList.remove("is-swapping");
+      }, reducedMotion ? 0 : 180);
+    }
     paintProgress();
   };
 

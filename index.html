@@ -9,8 +9,9 @@
   <meta property="og:title" content="Same Streets Presents — More Room for Music">
   <meta property="og:description" content="Every scene starts somewhere. Born in Cleveland, Tennessee. Built for wherever the music takes us.">
   <meta property="og:type" content="website">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/brand/favicon.png" type="image/png">
   <link rel="preload" as="image" href="assets/photos/crowd-wide.jpg">
+  <link rel="preload" as="image" href="assets/brand/wordmark.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,650;1,9..144,500;1,9..144,650&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -21,11 +22,7 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header" data-header>
     <a class="logo" href="index.html">
-      <svg class="logo-mark" viewBox="0 0 42 42" aria-hidden="true">
-        <rect x="1.5" y="1.5" width="39" height="39" rx="11" fill="none" stroke="rgba(246,239,230,.35)"/>
-        <path d="M9 17h24M9 25h24" stroke="#f0b429" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="7 5"/>
-      </svg>
-      <span class="logo-text"><strong>Same Streets</strong><small>Presents</small></span>
+      <img class="logo-badge" src="assets/brand/badge.png" alt="Same Streets Presents">
     </a>
     <nav id="site-nav" class="site-nav" aria-label="Primary">
       <a href="index.html" aria-current="page">Home</a>
@@ -51,8 +48,10 @@
       </div>
       <div class="hero-lights" aria-hidden="true"><i></i><i></i><i></i></div>
       <p class="hero-vert">Cleveland, Tennessee</p>
-      <div class="hero-copy wrap">
-        <p class="eyebrow"><span class="pulse" aria-hidden="true"></span> Same Streets Presents</p>
+      <div class="hero-layout">
+      <div class="hero-copy">
+        <img class="hero-wordmark" src="assets/brand/wordmark.png" alt="Same Streets Presents. Same Streets. New Scene.">
+        <p class="hero-kicker"><span class="pulse" aria-hidden="true"></span> <span data-hero-caption>The room · Cleveland, Tennessee</span></p>
         <h1>Every Scene<br>Starts<br>Somewhere.</h1>
         <p class="lede">We're making more room for music, for artists, and for the people who find themselves somewhere between the first note and the last song.</p>
         <p class="origin">Born in Cleveland, Tennessee. Built for wherever the music takes us.</p>
@@ -60,6 +59,8 @@
           <a class="btn btn-primary" href="shows.html">Find your next show <span aria-hidden="true">→</span></a>
           <a class="btn btn-ghost" href="about.html">Get to know us <span aria-hidden="true">→</span></a>
         </div>
+      </div>
+      <img class="hero-badge" src="assets/brand/badge.png" alt="">
       </div>
       <div class="hero-dock wrap">
         <p class="hero-count"><span data-slide-current>01</span> <span class="sr-only">of 4 photos</span><span aria-hidden="true">/ 04</span></p>
@@ -213,7 +214,7 @@
   <footer class="site-footer">
     <div class="wrap footer-grid">
       <div>
-        <p class="footer-brand">Same Streets Presents</p>
+        <img class="footer-logo" src="assets/brand/wordmark.png" alt="Same Streets Presents">
         <p class="footer-tag">More Room for Music.</p>
         <p>Built for the artists. Built for the audience. Built together.</p>
       </div>
