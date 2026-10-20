@@ -26,7 +26,7 @@
       <a href="contact.html">Contact</a>
     </nav>
     <div class="header-actions">
-      <a class="btn btn-primary nav-cta" href="contact.html">Submit your music</a>
+      <a class="btn btn-primary nav-cta" href="get-involved.html#artist-form">Submit your music</a>
       <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
     </div>
   </header>
@@ -56,7 +56,7 @@
             <h3>I'm an artist.</h3>
             <p>We want to discover your music, share your story, and find ways to get you in front of new audiences.</p>
             <p>Submit your information for consideration for shows, artist spotlights, and Same Streets Sessions.</p>
-            <a class="btn btn-primary" href="contact.html">Artist submission <span aria-hidden="true">→</span></a>
+            <a class="btn btn-primary" href="#artist-form">Artist submission <span aria-hidden="true">→</span></a>
           </article>
           <article class="lane" id="space" style="--accent:#2ee6c7; --photo:url('assets/photos/stage.webp')" data-reveal>
             <p class="lane-kicker">02</p>
@@ -79,6 +79,93 @@
             <p>We're interested in working with businesses and partners who believe in what we're building.</p>
             <a class="btn btn-primary" href="contact.html?topic=sponsorship">Become a partner <span aria-hidden="true">→</span></a>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="artist-form" style="padding-top:0">
+      <div class="wrap form-split">
+        <div class="stack copy" data-reveal>
+          <p class="eyebrow">Artist submission form</p>
+          <h2>Let us hear what you've got.</h2>
+          <p>We're looking for original voices, good music, and people who care about what they create.</p>
+          <p>You don't need to fit a specific mold.</p>
+          <p>There is no fee to apply or be selected for a Same Streets Session or artist spotlight. Participation is subject to selection and scheduling availability.</p>
+          <p class="form-help">This opens a draft in your email app addressed to <a href="mailto:samestreetspresents@gmail.com">samestreetspresents@gmail.com</a>. Hit send so it actually reaches us.</p>
+        </div>
+        <div class="form-card" data-reveal style="--d:80ms">
+          <form data-mail data-subject="Artist submission — Same Streets Presents">
+            <div class="fields">
+              <label class="hp">Company <input name="company" tabindex="-1" autocomplete="off"></label>
+              <label class="field">
+                <span>Artist or band name</span>
+                <input name="artist" data-label="Artist or band name" required autocomplete="organization">
+              </label>
+              <label class="field">
+                <span>Contact name</span>
+                <input name="contact" data-label="Contact name" required autocomplete="name">
+              </label>
+              <label class="field">
+                <span>Email address</span>
+                <input type="email" name="email" data-label="Email" required autocomplete="email">
+              </label>
+              <label class="field">
+                <span>City / location</span>
+                <input name="city" data-label="City / location" required autocomplete="address-level2">
+              </label>
+              <label class="field">
+                <span>Genre or musical style</span>
+                <input name="genre" data-label="Genre or musical style">
+              </label>
+              <label class="field">
+                <span>Social media links</span>
+                <input name="social" data-label="Social media links" placeholder="Instagram, TikTok, or wherever the music lives">
+              </label>
+              <label class="field field-wide">
+                <span>Music or performance links</span>
+                <input name="music" data-label="Music or performance links" required placeholder="https://">
+              </label>
+              <fieldset class="interests field-wide">
+                <legend>What are you interested in?</legend>
+                <div class="check-grid">
+                  <label class="check"><input type="checkbox" name="interested" value="Show booking" data-label="Interested in"><span>Show booking</span></label>
+                  <label class="check"><input type="checkbox" name="interested" value="Live session" data-label="Interested in"><span>Live session</span></label>
+                  <label class="check"><input type="checkbox" name="interested" value="Artist spotlight" data-label="Interested in"><span>Artist spotlight</span></label>
+                  <label class="check"><input type="checkbox" name="interested" value="General collaboration" data-label="Interested in"><span>General collaboration</span></label>
+                </div>
+              </fieldset>
+              <label class="field field-wide">
+                <span>Tell us a little about your music.</span>
+                <textarea name="about" data-label="About the music"></textarea>
+              </label>
+              <label class="field field-wide">
+                <span>Do you have photos or existing performance footage to share?</span>
+                <input name="footage" data-label="Photos or footage" placeholder="Links, or tell us what you have">
+              </label>
+              <label class="field field-wide">
+                <span>Link to a press kit or shared media folder</span>
+                <input name="presskit" data-label="Press kit or media folder" placeholder="https://">
+              </label>
+              <label class="field field-wide">
+                <span>Anything else we should know?</span>
+                <textarea name="else" data-label="Anything else"></textarea>
+              </label>
+              <label class="check field-wide">
+                <input type="checkbox" name="consent" value="I confirm I have permission to submit the linked materials and agree to be contacted about Same Streets opportunities." data-label="Consent" required>
+                <span>I confirm I have permission to submit the linked materials and agree to be contacted about Same Streets opportunities.</span>
+              </label>
+              <div class="field-wide">
+                <button class="btn btn-primary" type="submit">Send your music <span aria-hidden="true">→</span></button>
+              </div>
+            </div>
+          </form>
+          <div class="form-success stack" hidden>
+            <p class="eyebrow">Artist submission</p>
+            <h3>We got it.</h3>
+            <p>Thanks for sharing your music with us. We're excited to listen.</p>
+            <p>We review submissions as opportunities develop, and we'll reach out if there's a good fit.</p>
+            <p class="form-help">Your email app should be open with this note ready to send. If it isn't, write <a href="mailto:samestreetspresents@gmail.com">samestreetspresents@gmail.com</a>.</p>
+          </div>
         </div>
       </div>
     </section>

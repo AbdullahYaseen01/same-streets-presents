@@ -616,6 +616,11 @@ h3 {
   contain-intrinsic-size: auto 720px;
 }
 
+#artist-form {
+  content-visibility: visible;
+  scroll-margin-top: calc(var(--header) + 1rem);
+}
+
 .section-head {
   display: flex;
   justify-content: space-between;
