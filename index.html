@@ -10,11 +10,7 @@
   <meta property="og:description" content="Every scene starts somewhere. Born in Cleveland, Tennessee. Built for wherever the music takes us.">
   <meta property="og:type" content="website">
   <link rel="icon" href="assets/brand/favicon.png" type="image/png">
-  <link rel="preload" as="image" href="assets/photos/crowd-wide.jpg">
-  <link rel="preload" as="image" href="assets/brand/wordmark.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,650;1,9..144,500;1,9..144,650&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/photos/crowd-wide.webp" fetchpriority="high">
   <link rel="stylesheet" href="css/styles.css">
   <script>document.documentElement.classList.add("js")</script>
 </head>
@@ -22,7 +18,7 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header" data-header>
     <a class="logo" href="index.html">
-      <img class="logo-badge" src="assets/brand/badge.png" alt="Same Streets Presents">
+      <img class="logo-badge" src="assets/brand/badge.webp" alt="Same Streets Presents" decoding="async">
     </a>
     <nav id="site-nav" class="site-nav" aria-label="Primary">
       <a href="index.html" aria-current="page">Home</a>
@@ -41,16 +37,16 @@
   <main id="main">
     <section class="hero" data-hero aria-roledescription="carousel" aria-label="Scene photography">
       <div class="hero-slides" aria-hidden="true">
-        <div class="hero-slide is-active" data-grade="amber" style="background-image:url('assets/photos/crowd-wide.jpg')"></div>
-        <div class="hero-slide" data-grade="magenta" style="background-image:url('assets/photos/singer.jpg')"></div>
-        <div class="hero-slide" data-grade="teal" style="background-image:url('assets/photos/club.jpg')"></div>
-        <div class="hero-slide" data-grade="ember" style="background-image:url('assets/photos/concert-dark.jpg')"></div>
+        <div class="hero-slide is-active" data-grade="amber" style="background-image:url('assets/photos/crowd-wide.webp')"></div>
+        <div class="hero-slide" data-grade="magenta" data-bg="assets/photos/singer.webp"></div>
+        <div class="hero-slide" data-grade="teal" data-bg="assets/photos/club.webp"></div>
+        <div class="hero-slide" data-grade="ember" data-bg="assets/photos/concert-dark.webp"></div>
       </div>
       <div class="hero-lights" aria-hidden="true"><i></i><i></i><i></i></div>
       <p class="hero-vert">Cleveland, Tennessee</p>
       <div class="hero-layout">
       <div class="hero-copy">
-        <img class="hero-wordmark" src="assets/brand/wordmark.png" alt="Same Streets Presents. Same Streets. New Scene.">
+        <img class="hero-wordmark" src="assets/brand/wordmark.webp" alt="Same Streets Presents. Same Streets. New Scene." decoding="async">
         <p class="hero-kicker"><span class="pulse" aria-hidden="true"></span> <span data-hero-caption>The room · Cleveland, Tennessee</span></p>
         <h1>Every Scene<br><span class="hero-line">Starts Somewhere.</span></h1>
         <p class="lede">We're making more room for music, for artists, and for the people who find themselves somewhere between the first note and the last song.</p>
@@ -64,10 +60,10 @@
         <p class="hero-count"><span data-slide-current>01</span> <span class="sr-only">of 4 photos</span><span aria-hidden="true">/ 04</span></p>
         <div class="hero-progress" aria-hidden="true"><span></span></div>
         <div class="hero-thumbs">
-          <button class="hero-thumb is-active" type="button" data-go="0" aria-label="Show the crowd" aria-current="true"><img src="assets/photos/crowd-wide.jpg" alt=""></button>
-          <button class="hero-thumb" type="button" data-go="1" aria-label="Show the performer"><img src="assets/photos/singer.jpg" alt=""></button>
-          <button class="hero-thumb" type="button" data-go="2" aria-label="Show the color on stage"><img src="assets/photos/club.jpg" alt=""></button>
-          <button class="hero-thumb" type="button" data-go="3" aria-label="Show the night"><img src="assets/photos/concert-dark.jpg" alt=""></button>
+          <button class="hero-thumb is-active" type="button" data-go="0" aria-label="Show the crowd" aria-current="true"><img src="assets/photos/thumbs/crowd-wide.webp" alt="" width="360" height="240" decoding="async"></button>
+          <button class="hero-thumb" type="button" data-go="1" aria-label="Show the performer"><img src="assets/photos/thumbs/singer.webp" alt="" width="360" height="240" decoding="async"></button>
+          <button class="hero-thumb" type="button" data-go="2" aria-label="Show the color on stage"><img src="assets/photos/thumbs/club.webp" alt="" width="360" height="240" decoding="async"></button>
+          <button class="hero-thumb" type="button" data-go="3" aria-label="Show the night"><img src="assets/photos/thumbs/concert-dark.webp" alt="" width="360" height="240" decoding="async"></button>
         </div>
         <div class="hero-arrows">
           <button class="icon-btn" type="button" data-slide-prev aria-label="Previous photo">←</button>
@@ -88,7 +84,7 @@
     <section class="section band-cream intro" id="intro">
       <div class="wrap scene-mark">
         <div class="road" aria-hidden="true"></div>
-        <img class="scene-badge" src="assets/brand/badge.png" alt="Same Streets Presents">
+        <img class="scene-badge" src="assets/brand/badge.webp" alt="Same Streets Presents" loading="lazy" decoding="async">
       </div>
       <div class="wrap intro-grid">
         <div class="stack" data-reveal>
@@ -102,7 +98,7 @@
           <p><a class="btn btn-ink" href="about.html">Why we exist <span aria-hidden="true">→</span></a></p>
         </div>
         <figure class="intro-figure" data-reveal style="--d:140ms">
-          <img src="assets/photos/mic.jpg" alt="A guitarist and drummer playing under blue and amber stage light.">
+          <img src="assets/photos/mic.webp" alt="A guitarist and drummer playing under blue and amber stage light." loading="lazy" decoding="async">
         </figure>
       </div>
     </section>
@@ -117,7 +113,7 @@
         </div>
         <div class="do-grid">
           <a class="do-card" href="shows.html" data-reveal>
-            <img src="assets/photos/crowd-wide.jpg" alt="A full room facing the stage at a live show.">
+            <img src="assets/photos/crowd-wide.webp" alt="A full room facing the stage at a live show." loading="lazy" decoding="async">
             <span class="do-bar" style="--bar:#ff4d2e"></span>
             <span class="do-index">01</span>
             <div class="do-copy">
@@ -126,7 +122,7 @@
             </div>
           </a>
           <a class="do-card" href="sessions.html" data-reveal style="--d:80ms">
-            <img src="assets/photos/guitar.jpg" alt="A vintage microphone in red and amber light.">
+            <img src="assets/photos/guitar.webp" alt="A vintage microphone in red and amber light." loading="lazy" decoding="async">
             <span class="do-bar" style="--bar:#2ee6c7"></span>
             <span class="do-index">02</span>
             <div class="do-copy">
@@ -135,7 +131,7 @@
             </div>
           </a>
           <a class="do-card" href="sessions.html#spotlights" data-reveal style="--d:140ms">
-            <img src="assets/photos/singer.jpg" alt="A performer singing into warm stage light.">
+            <img src="assets/photos/singer.webp" alt="A performer singing into warm stage light." loading="lazy" decoding="async">
             <span class="do-bar" style="--bar:#ff3d8a"></span>
             <span class="do-index">03</span>
             <div class="do-copy">
@@ -144,7 +140,7 @@
             </div>
           </a>
           <a class="do-card" href="get-involved.html" data-reveal style="--d:200ms">
-            <img src="assets/photos/hands.jpg" alt="Hands raised in a crowd at a concert.">
+            <img src="assets/photos/hands.webp" alt="Hands raised in a crowd at a concert." loading="lazy" decoding="async">
             <span class="do-bar" style="--bar:#f0b429"></span>
             <span class="do-index">04</span>
             <div class="do-copy">
@@ -188,7 +184,7 @@
     <section class="section" id="session" style="padding-top:0">
       <div class="wrap session-grid">
         <div class="player-frame" data-reveal>
-          <img data-session-image src="assets/photos/stage.jpg" alt="A band performing in a dark room washed in stage light.">
+          <img data-session-image src="assets/photos/stage.webp" alt="A band performing in a dark room washed in stage light." loading="lazy" decoding="async">
           <button class="play" type="button" data-open-session>Play</button>
         </div>
         <div class="stack copy" data-reveal style="--d:100ms">
@@ -202,7 +198,7 @@
     </section>
 
     <section class="invite">
-      <div class="invite-bg" style="background-image:url('assets/photos/crowd-lights.jpg')"></div>
+      <div class="invite-bg" style="background-image:url('assets/photos/crowd-lights.webp')"></div>
       <div class="wrap invite-copy stack">
         <p class="eyebrow">Community invitation</p>
         <h2>This doesn't happen without you.</h2>
@@ -216,7 +212,7 @@
   <footer class="site-footer">
     <div class="wrap footer-grid">
       <div>
-        <img class="footer-logo" src="assets/brand/wordmark.png" alt="Same Streets Presents">
+        <img class="footer-logo" src="assets/brand/wordmark.webp" alt="Same Streets Presents" loading="lazy" decoding="async">
         <p class="footer-tag">More Room for Music.</p>
         <p>Built for the artists. Built for the audience. Built together.</p>
       </div>
@@ -271,6 +267,6 @@
     "areaServed": "Cleveland, Tennessee"
   }
   </script>
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>

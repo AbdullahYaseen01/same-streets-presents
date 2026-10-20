@@ -11,7 +11,7 @@ const UPCOMING_SHOWS = [
   //   city: "Cleveland, Tennessee",
   //   lineup: ["Artist One", "Artist Two"],
   //   admission: "Tickets at the door",
-  //   image: "assets/photos/stage.jpg",
+  //   image: "assets/photos/stage.webp",
   //   tickets: "https://example.com/tickets"
   // }
 ];
@@ -101,8 +101,18 @@ function initHero() {
     }
   };
 
+  const warmSlides = () => {
+    slides.forEach((slide) => {
+      const bg = slide.dataset.bg;
+      if (!bg || slide.style.backgroundImage) return;
+      slide.style.backgroundImage = `url("${bg}")`;
+    });
+  };
+
   const go = (next) => {
-    index = (next + slides.length) % slides.length;
+    const upcoming = (next + slides.length) % slides.length;
+    if (upcoming !== index) warmSlides();
+    index = upcoming;
     slides.forEach((slide, i) => slide.classList.toggle("is-active", i === index));
     thumbs.forEach((thumb, i) => {
       const active = i === index;
@@ -178,6 +188,8 @@ function initHero() {
 
   go(0);
   queue();
+  if ("requestIdleCallback" in window) window.requestIdleCallback(warmSlides, { timeout: 1500 });
+  else window.addEventListener("load", warmSlides, { once: true });
 }
 
 function showDateParts(dateStr) {
@@ -320,7 +332,7 @@ function initSession() {
   if (library && SESSION_LIBRARY.length) {
     library.innerHTML = SESSION_LIBRARY.map((item) => `
       <article class="session-card" data-tags="${esc(item.tags || "live")}">
-        <img src="${esc(item.image || "assets/photos/stage.jpg")}" alt="">
+        <img src="${esc(item.image || "assets/photos/stage.webp")}" alt="">
         <div class="card-body">
           <p class="badge">${esc(item.artist || "Session")}</p>
           <h3>${esc(item.title)}</h3>

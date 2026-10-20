@@ -7,9 +7,7 @@
   <meta name="description" content="Same Streets was born from a simple belief: music can make a place feel like home. Our story starts in Cleveland, Tennessee.">
   <meta name="theme-color" content="#0e0c0a">
   <link rel="icon" href="assets/brand/favicon.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,650;1,9..144,500;1,9..144,650&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/photos/singer.webp" fetchpriority="high">
   <link rel="stylesheet" href="css/styles.css">
   <script>document.documentElement.classList.add("js")</script>
 </head>
@@ -17,7 +15,7 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header" data-header>
     <a class="logo" href="index.html">
-      <img class="logo-badge" src="assets/brand/badge.png" alt="Same Streets Presents">
+      <img class="logo-badge" src="assets/brand/badge.webp" alt="Same Streets Presents" decoding="async">
     </a>
     <nav id="site-nav" class="site-nav" aria-label="Primary">
       <a href="index.html">Home</a>
@@ -35,7 +33,7 @@
 
   <main id="main">
     <section class="page-hero" data-grade="magenta">
-      <div class="page-hero-media" style="background-image:url('assets/photos/singer.jpg')"></div>
+      <div class="page-hero-media" style="background-image:url('assets/photos/singer.webp')"></div>
       <div class="wrap page-hero-copy stack">
         <p class="eyebrow">About</p>
         <h1>We know what it's like to need a place.</h1>
@@ -46,7 +44,7 @@
     <section class="section">
       <div class="wrap story-grid">
         <div data-reveal>
-          <img class="story-photo" src="assets/photos/crowd-lights.jpg" alt="A crowd lit by concert lights, close enough to feel the room.">
+          <img class="story-photo" src="assets/photos/crowd-lights.webp" alt="A crowd lit by concert lights, close enough to feel the room." loading="lazy" decoding="async">
         </div>
         <div class="stack copy" data-reveal style="--d:80ms">
           <p class="eyebrow">Our story</p>
@@ -95,7 +93,7 @@
     </section>
 
     <section class="pit" id="philosophy">
-      <div class="pit-media" style="background-image:url('assets/photos/hands.jpg')"></div>
+      <div class="pit-media" style="background-image:url('assets/photos/hands.webp')"></div>
       <div class="wrap">
         <div class="pit-card stack copy" data-reveal>
           <p class="eyebrow">The philosophy</p>
@@ -124,7 +122,7 @@
   <footer class="site-footer">
     <div class="wrap footer-grid">
       <div>
-        <img class="footer-logo" src="assets/brand/wordmark.png" alt="Same Streets Presents">
+        <img class="footer-logo" src="assets/brand/wordmark.webp" alt="Same Streets Presents" loading="lazy" decoding="async">
         <p class="footer-tag">More Room for Music.</p>
         <p>Built for the artists. Built for the audience. Built together.</p>
       </div>
@@ -156,6 +154,6 @@
       <p>© <span data-year>2026</span> Same Streets Presents</p>
     </div>
   </footer>
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
