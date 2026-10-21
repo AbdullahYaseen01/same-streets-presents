@@ -1299,6 +1299,138 @@ select:focus { border-color: var(--mustard); }
   font-size: 1.35rem;
 }
 
+.founder {
+  position: relative;
+  padding: clamp(4.2rem, 8vw, 7rem) 0 0;
+  background:
+    radial-gradient(720px 320px at 8% 0%, rgba(240, 180, 41, 0.16), transparent 62%),
+    linear-gradient(180deg, #14110e 0%, #0e0c0a 42%);
+}
+
+.founder-stage {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.82fr) 1.18fr;
+  gap: clamp(1.6rem, 4vw, 4.5rem);
+  align-items: end;
+}
+
+.founder-frame {
+  position: relative;
+  margin: 0 0 1.4rem;
+}
+
+.founder-frame::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 8% -7% -7% 10%;
+  border: 1px solid var(--mustard);
+  border-radius: 32px;
+}
+
+.founder-frame img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 12%;
+  border-radius: 32px;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.48);
+}
+
+.founder-frame figcaption {
+  position: absolute;
+  z-index: 2;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.85rem 1rem;
+  border-radius: 18px;
+  background: rgba(12, 11, 9, 0.78);
+  backdrop-filter: blur(8px);
+}
+
+.founder-frame figcaption .eyebrow { font-size: 0.68rem; }
+.founder-frame strong {
+  font-family: var(--display);
+  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+.founder-frame figcaption span:last-child {
+  color: var(--mustard-2);
+  letter-spacing: 0.14em;
+  font-size: 0.95rem;
+}
+
+.founder-lead h2 {
+  font-size: clamp(3.2rem, 6.4vw, 6.2rem);
+  max-width: 11ch;
+}
+
+.founder-lead p:not(.eyebrow) {
+  max-width: 38rem;
+  font-size: clamp(1.2rem, 1.6vw, 1.45rem);
+}
+
+.founder-quote {
+  margin: clamp(2.8rem, 6vw, 4.6rem) 0 0;
+  padding: clamp(2.6rem, 6vw, 4.8rem) 0;
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.founder-quote p {
+  width: min(1080px, calc(100% - 2.4rem));
+  margin: 0 auto;
+  font-family: var(--display);
+  font-size: clamp(2.2rem, 5vw, 4.6rem);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.founder-letter {
+  width: min(760px, calc(100% - 2.4rem));
+  margin: 0 auto;
+  padding: clamp(3rem, 6vw, 5rem) 0 clamp(4rem, 8vw, 6.5rem);
+}
+
+.founder-letter p {
+  font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+  line-height: 1.28;
+}
+
+.founder-close {
+  color: var(--mustard-2);
+  font-size: clamp(1.6rem, 2.6vw, 2.15rem) !important;
+  line-height: 1.1;
+}
+
+.founder-sign {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-top: 1.6rem;
+  color: var(--cream);
+  letter-spacing: 0.16em;
+  font-size: 1.25rem;
+}
+
+.founder-sign::before {
+  content: "";
+  width: 42px;
+  height: 2px;
+  background: var(--mustard);
+  flex: none;
+}
+
 .footer-grid p { color: var(--muted); margin-top: 0.7rem; max-width: 36ch; }
 
 .footer-nav,
@@ -1448,6 +1580,7 @@ select:focus { border-color: var(--mustard); }
   .session-grid,
   .contact-grid,
   .story-grid,
+  .founder-stage,
   .form-split,
   .belief-grid,
   .lane-grid,
@@ -1467,6 +1600,8 @@ select:focus { border-color: var(--mustard); }
   .scene-badge { width: min(42vw, 150px); }
   .hero h1 { font-size: clamp(1.7rem, 6.6vw, 2.7rem); }
   .story-photo { position: static; height: 320px; }
+  .founder-frame::before { inset: 5% -3% -4% 5%; }
+  .founder-quote p { font-size: clamp(1.85rem, 8.4vw, 2.7rem); }
   .hero-thumbs { margin-left: 0; width: 100%; }
   .section-head,
   .ticket,
