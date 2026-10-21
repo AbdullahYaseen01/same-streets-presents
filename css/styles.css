@@ -1102,6 +1102,8 @@ h3 {
   top: 104px;
 }
 
+#room { scroll-margin-top: calc(var(--header) + 0.75rem); }
+
 .photo-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
