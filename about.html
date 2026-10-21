@@ -7,7 +7,7 @@
   <meta name="description" content="Same Streets was born from a simple belief: music can make a place feel like home. Our story starts in Cleveland, Tennessee.">
   <meta name="theme-color" content="#0e0c0a">
   <link rel="icon" href="assets/brand/favicon.png" type="image/png">
-  <link rel="preload" as="image" href="assets/photos/singer.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/photos/kyle-brooks.webp" fetchpriority="high">
   <link rel="stylesheet" href="css/styles.css">
   <script>document.documentElement.classList.add("js")</script>
 </head>
@@ -33,7 +33,7 @@
 
   <main id="main">
     <section class="page-hero" data-grade="magenta">
-      <div class="page-hero-media" style="background-image:url('assets/photos/singer.webp')"></div>
+      <div class="page-hero-media" style="background-image:url('assets/photos/kyle-brooks.webp');background-position:center 18%"></div>
       <div class="wrap page-hero-copy stack">
         <p class="eyebrow">About</p>
         <h1>We know what it's like to need a place.</h1>
@@ -44,21 +44,24 @@
     <section class="section">
       <div class="wrap story-grid">
         <div data-reveal>
-          <img class="story-photo" src="assets/photos/crowd-lights.webp" alt="A crowd lit by concert lights, close enough to feel the room." loading="lazy" decoding="async">
+          <img class="story-photo" src="assets/photos/kyle-brooks.webp" alt="Kyle Brooks, founder of Same Streets Presents." style="object-position:center 12%" loading="lazy" decoding="async">
         </div>
         <div class="stack copy" data-reveal style="--d:80ms">
           <p class="eyebrow">Our story</p>
           <h2>Every scene starts somewhere.</h2>
-          <p>Growing up in Cleveland, Tennessee, it wasn't always easy to find a place for the kind of music we loved.</p>
+          <p>Growing up in Cleveland, Tennessee, it wasn't always easy to find a place for the kind of music I loved.</p>
           <p>The bands were out there. The people were out there. But finding each other, finding somewhere to play, and finding a place to belong wasn't always easy.</p>
-          <p>Music became more than something to listen to. It became a way to connect, to express things that were hard to put into words, and to discover who we were.</p>
-          <p>And somewhere along the way, the shows became just as important as the songs.</p>
+          <p>For me, music became more than something to listen to. It became a way to connect with people, to express things I couldn't always put into words, and to discover who I was.</p>
+          <p>And somewhere along the way, I realized the shows were just as important as the songs.</p>
           <p class="pull">The crowded rooms. The voices singing back. The strangers who didn't feel like strangers by the end of the night.</p>
-          <p>Same Streets Presents exists because we want more people to experience that.</p>
-          <p>We want artists to have opportunities to be heard, communities to have places to gather, and audiences to experience shows they'll remember long after the lights come on.</p>
-          <p>We're starting in Cleveland.</p>
-          <p>But the idea is bigger than one city, one genre, or one room.</p>
-          <p>We want to make more room for music. Everywhere we can.</p>
+          <p>Those experiences shaped me. And I believe everyone deserves the chance to experience something like that.</p>
+          <p>That's why I started Same Streets Presents.</p>
+          <p>I want to help artists find their audience, create spaces where people can come together, and put on shows that people will remember long after the lights come on.</p>
+          <p>I want the kid who feels a little out of place to walk into a room and realize they've found their people. I want local artists to have opportunities I wish had been easier to find growing up. And I want to help create the kind of music scene that people are proud to be part of.</p>
+          <p>I'm starting right here in Cleveland, the place that shaped me.</p>
+          <p>But my vision is bigger than one city, one genre, or one room.</p>
+          <p>I just want to make more room for music. Everywhere I can.</p>
+          <p class="story-sign">Kyle Brooks, Founder</p>
         </div>
       </div>
     </section>
@@ -103,7 +106,6 @@
           <p>The things that make a great music community aren't so different from the things that make us better people.</p>
           <p>The pit is more than chaos. At its best, it's a place where we let go, look out for each other, and find something bigger than ourselves.</p>
           <p>That's the kind of community we want to build.</p>
-          <p><a class="btn btn-primary" href="journal.html">Read our philosophy <span aria-hidden="true">→</span></a></p>
         </div>
       </div>
     </section>
@@ -125,6 +127,7 @@
         <img class="footer-logo" src="assets/brand/wordmark.webp" alt="Same Streets Presents" loading="lazy" decoding="async">
         <p class="footer-tag">More Room for Music.</p>
         <p>Built for the artists. Built for the audience. Built together.</p>
+        <p><button class="btn btn-primary" type="button" data-open-list>Join the list</button></p>
       </div>
       <nav class="footer-nav" aria-label="Footer">
         <a href="about.html">About</a>
@@ -154,6 +157,35 @@
       <p>© <span data-year>2026</span> Same Streets Presents</p>
     </div>
   </footer>
+  <dialog class="modal list-dialog" id="list-dialog">
+    <div class="modal-top"><button class="modal-close icon-btn" type="button" data-close aria-label="Close">×</button></div>
+    <div class="stack">
+      <p class="eyebrow">Email list</p>
+      <h3>Stay in the room.</h3>
+      <p>Shows, sessions, and everything happening with Same Streets.</p>
+      <form data-mail data-subject="Email list signup — Same Streets Presents">
+        <div class="fields">
+          <label class="hp">Company <input name="company" tabindex="-1" autocomplete="off"></label>
+          <label class="field">
+            <span>Email</span>
+            <input type="email" name="email" data-label="Email" required autocomplete="email">
+          </label>
+          <label class="field">
+            <span>Phone number</span>
+            <input type="tel" name="phone" data-label="Phone number" required autocomplete="tel">
+          </label>
+          <div class="field-wide">
+            <button class="btn btn-primary" type="submit">Sign up <span aria-hidden="true">→</span></button>
+          </div>
+        </div>
+      </form>
+      <div class="form-success stack" hidden>
+        <p class="eyebrow">Email list</p>
+        <h3>You're on the list.</h3>
+        <p>Your email app should be open with this note ready to send. If it isn't, write <a href="mailto:samestreetspresents@gmail.com">samestreetspresents@gmail.com</a>.</p>
+      </div>
+    </div>
+  </dialog>
   <script src="js/main.js" defer></script>
 </body>
 </html>

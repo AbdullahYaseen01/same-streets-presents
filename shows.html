@@ -91,6 +91,7 @@
         <img class="footer-logo" src="assets/brand/wordmark.webp" alt="Same Streets Presents" loading="lazy" decoding="async">
         <p class="footer-tag">More Room for Music.</p>
         <p>Built for the artists. Built for the audience. Built together.</p>
+        <p><button class="btn btn-primary" type="button" data-open-list>Join the list</button></p>
       </div>
       <nav class="footer-nav" aria-label="Footer">
         <a href="about.html">About</a>
@@ -120,6 +121,35 @@
       <p>© <span data-year>2026</span> Same Streets Presents</p>
     </div>
   </footer>
+  <dialog class="modal list-dialog" id="list-dialog">
+    <div class="modal-top"><button class="modal-close icon-btn" type="button" data-close aria-label="Close">×</button></div>
+    <div class="stack">
+      <p class="eyebrow">Email list</p>
+      <h3>Stay in the room.</h3>
+      <p>Shows, sessions, and everything happening with Same Streets.</p>
+      <form data-mail data-subject="Email list signup — Same Streets Presents">
+        <div class="fields">
+          <label class="hp">Company <input name="company" tabindex="-1" autocomplete="off"></label>
+          <label class="field">
+            <span>Email</span>
+            <input type="email" name="email" data-label="Email" required autocomplete="email">
+          </label>
+          <label class="field">
+            <span>Phone number</span>
+            <input type="tel" name="phone" data-label="Phone number" required autocomplete="tel">
+          </label>
+          <div class="field-wide">
+            <button class="btn btn-primary" type="submit">Sign up <span aria-hidden="true">→</span></button>
+          </div>
+        </div>
+      </form>
+      <div class="form-success stack" hidden>
+        <p class="eyebrow">Email list</p>
+        <h3>You're on the list.</h3>
+        <p>Your email app should be open with this note ready to send. If it isn't, write <a href="mailto:samestreetspresents@gmail.com">samestreetspresents@gmail.com</a>.</p>
+      </div>
+    </div>
+  </dialog>
   <script src="js/main.js" defer></script>
 </body>
 </html>

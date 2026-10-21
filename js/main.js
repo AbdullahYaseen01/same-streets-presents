@@ -460,6 +460,17 @@ function initReveal() {
   nodes.forEach((node) => observer.observe(node));
 }
 
+function initList() {
+  document.querySelectorAll("[data-open-list]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const dialog = document.getElementById("list-dialog");
+      if (!dialog) return;
+      bindDialog(dialog);
+      dialog.showModal();
+    });
+  });
+}
+
 function initYear() {
   const year = String(new Date().getFullYear());
   document.querySelectorAll("[data-year]").forEach((node) => {
@@ -473,6 +484,7 @@ initShows();
 initSession();
 initLightbox();
 initForms();
+initList();
 initSocial();
 initReveal();
 initYear();
