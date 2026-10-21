@@ -1102,6 +1102,27 @@ h3 {
   top: 104px;
 }
 
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.photo-grid figure { margin: 0; }
+
+.photo-grid img {
+  display: block;
+  width: 100%;
+  height: clamp(180px, 24vw, 320px);
+  object-fit: cover;
+  border-radius: 22px;
+}
+
+@media (max-width: 800px) {
+  .photo-grid { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+  .photo-grid img { height: 168px; border-radius: 16px; }
+}
+
 .booking h2,
 .form-split h2,
 .contact-grid h2 { font-size: clamp(2.7rem, 5vw, 4.5rem); }
@@ -1542,8 +1563,211 @@ select:focus { border-color: var(--mustard); }
   50% { transform: translateY(-14px) rotate(7deg); }
 }
 
+/* About hero — the portrait is its own frame so the face stays clear. */
+
+.about-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  padding: calc(var(--header) + 1.25rem) 0 1.6rem;
+  background:
+    radial-gradient(520px 460px at 78% 46%, rgba(255, 61, 138, 0.2), transparent 64%),
+    radial-gradient(420px 360px at 62% 88%, rgba(240, 180, 41, 0.14), transparent 68%),
+    #0c0b09;
+}
+
+.about-hero::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: min(52vw, 640px);
+  height: min(70vh, 720px);
+  right: -4vw;
+  top: 12vh;
+  background: radial-gradient(closest-side, rgba(255, 61, 138, 0.34), transparent 72%);
+  filter: blur(6px);
+  animation: float 16s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.about-hero-stage {
+  position: relative;
+  z-index: 1;
+  width: min(1180px, calc(100% - 3.2rem));
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) auto;
+  gap: clamp(1.4rem, 4vw, 4.2rem);
+  align-items: end;
+}
+
+.about-hero-copy { max-width: 40rem; min-width: 0; }
+
+.about-hero h1 {
+  max-width: none;
+  margin: 0.45rem 0 0.85rem;
+  font-size: clamp(3.15rem, 5vw, 5.35rem);
+}
+
+.about-hero h1 em {
+  font-style: normal;
+  color: var(--mustard);
+}
+
+.about-hero .lede { max-width: 34rem; color: var(--cream-dim); }
+
+.about-hero-actions { margin: 1.35rem 0 0; }
+
+.about-hero-copy > * {
+  animation: brand-in 0.85s cubic-bezier(0.16, 0.84, 0.32, 1) both;
+}
+
+.about-hero-copy > *:nth-child(2) { animation-delay: 0.08s; }
+.about-hero-copy > *:nth-child(3) { animation-delay: 0.16s; }
+.about-hero-copy > *:nth-child(4) { animation-delay: 0.24s; }
+
+.about-hero-portrait {
+  position: relative;
+  margin: 0;
+  height: min(74svh, 740px);
+  aspect-ratio: 2 / 3;
+  animation: brand-in 1s cubic-bezier(0.16, 0.84, 0.32, 1) 0.05s both;
+}
+
+.about-hero-portrait::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 8% -6% -5% 7%;
+  border: 1px solid var(--mustard);
+  border-radius: 30px;
+  pointer-events: none;
+}
+
+.about-hero-frame {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(246, 239, 230, 0.18),
+    0 30px 70px rgba(0, 0, 0, 0.52);
+  transition: transform 0.5s cubic-bezier(0.16, 0.84, 0.32, 1);
+}
+
+.about-hero-portrait:hover .about-hero-frame { transform: translateY(-6px); }
+
+.about-hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+}
+
+.about-hero-frame::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 132px;
+  background: linear-gradient(180deg, transparent, rgba(8, 7, 6, 0.84));
+  pointer-events: none;
+}
+
+.about-hero-badge {
+  position: absolute;
+  z-index: 4;
+  width: 128px;
+  height: auto;
+  right: -22px;
+  top: 5%;
+  filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.5));
+  animation: stamp 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.about-hero-portrait figcaption {
+  position: absolute;
+  z-index: 3;
+  left: 0.85rem;
+  right: 4.6rem;
+  bottom: 0.85rem;
+  display: grid;
+  gap: 0.12rem;
+}
+
+.about-hero-portrait figcaption .eyebrow { font-size: 0.66rem; }
+
+.about-hero-portrait figcaption strong {
+  font-family: var(--display);
+  font-size: clamp(1.55rem, 2vw, 2.05rem);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.about-hero-portrait figcaption span:last-child {
+  color: var(--mustard-2);
+  letter-spacing: 0.14em;
+  font-size: 0.92rem;
+}
+
 @media (max-width: 980px) {
   .page-hero::before { display: none; }
+  .about-hero {
+    min-height: 100svh;
+    flex-direction: column;
+    align-items: stretch;
+    padding: calc(var(--header) + 0.7rem) 0 0.85rem;
+  }
+  .about-hero-stage {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: none;
+    align-items: stretch;
+    width: min(1180px, calc(100% - 2rem));
+    min-width: 0;
+    min-height: 0;
+  }
+  .about-hero-copy { max-width: none; }
+  .about-hero h1 {
+    font-size: clamp(2.35rem, 10.2vw, 3.4rem);
+    margin: 0.25rem 0 0.4rem;
+  }
+  .about-hero .lede {
+    width: 100%;
+    max-width: 100%;
+    font-size: 1.05rem;
+    line-height: 1.35;
+    white-space: normal;
+  }
+  .about-hero-actions { margin-top: 0.75rem; }
+  .about-hero-portrait {
+    flex: 1 1 auto;
+    width: 100%;
+    height: auto;
+    min-height: 240px;
+    aspect-ratio: auto;
+    margin-top: 1rem;
+  }
+  .about-hero-frame,
+  .about-hero-photo { min-width: 0; max-width: 100%; }
+  .about-hero-frame { min-height: 240px; }
+  .about-hero-photo { object-position: center 16%; }
+  .about-hero-badge {
+    width: 92px;
+    top: auto;
+    right: 0.7rem;
+    bottom: 4.5rem;
+  }
   .site-header { display: flex; justify-content: space-between; }
   .nav-toggle { display: inline-flex; align-items: center; }
   .nav-cta { white-space: nowrap; }
@@ -1628,6 +1852,9 @@ select:focus { border-color: var(--mustard); }
   .page-hero,
   .invite,
   .pit { min-height: 78vh; }
+  .about-hero h1 { font-size: clamp(2.15rem, 9.4vw, 2.85rem); }
+  .about-hero-portrait { width: 100%; }
+  .about-hero-portrait figcaption { right: 5.2rem; }
   .player-frame,
   .player-frame img { min-height: 320px; }
 }

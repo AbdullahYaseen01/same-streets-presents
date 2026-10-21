@@ -7,7 +7,7 @@
   <meta name="description" content="Same Streets was born from a simple belief: music can make a place feel like home. Our story starts in Cleveland, Tennessee.">
   <meta name="theme-color" content="#0e0c0a">
   <link rel="icon" href="assets/brand/favicon.png" type="image/png">
-  <link rel="preload" as="image" href="assets/photos/kyle-brooks.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/photos/kyle-hero.webp" fetchpriority="high">
   <link rel="stylesheet" href="css/styles.css">
   <script>document.documentElement.classList.add("js")</script>
 </head>
@@ -32,19 +32,32 @@
   </header>
 
   <main id="main">
-    <section class="page-hero" data-grade="magenta">
-      <div class="page-hero-media" style="background-image:url('assets/photos/kyle-brooks.webp');background-position:center 18%"></div>
-      <div class="wrap page-hero-copy stack">
-        <p class="eyebrow">About</p>
-        <h1>We know what it's like to need a place.</h1>
-        <p class="lede">Same Streets was born from a simple belief: music can make a place feel like home.</p>
+    <section class="about-hero" aria-labelledby="about-hero-title">
+      <div class="about-hero-stage">
+        <div class="about-hero-copy">
+          <p class="eyebrow"><span class="pulse" aria-hidden="true"></span> About</p>
+          <h1 id="about-hero-title">We know what<br>it's like to<br>need a <em>place.</em></h1>
+          <p class="lede">Same Streets was born from a simple belief: music can make a place feel like home.</p>
+          <p class="about-hero-actions"><a class="btn btn-ghost" href="#story">The story <span aria-hidden="true">↓</span></a></p>
+        </div>
+        <figure class="about-hero-portrait">
+          <div class="about-hero-frame">
+            <img class="about-hero-photo" src="assets/photos/kyle-hero.webp" alt="Kyle Brooks, founder of Same Streets Presents." width="1500" height="2250" fetchpriority="high" decoding="async">
+          </div>
+          <img class="about-hero-badge" src="assets/brand/badge.webp" alt="" width="168" height="168">
+          <figcaption>
+            <span class="eyebrow">Founder</span>
+            <strong>Kyle Brooks</strong>
+            <span>Cleveland, Tennessee</span>
+          </figcaption>
+        </figure>
       </div>
     </section>
 
     <section class="founder" id="story">
       <div class="wrap founder-stage">
         <figure class="founder-frame" data-reveal>
-          <img src="assets/photos/kyle-brooks.webp" alt="Kyle Brooks, founder of Same Streets Presents." width="1067" height="1600" decoding="async">
+          <img src="assets/photos/kyle-brooks.webp" alt="Kyle Brooks, founder of Same Streets Presents." width="1067" height="1600" loading="lazy" decoding="async">
           <figcaption>
             <span class="eyebrow">Founder</span>
             <strong>Kyle Brooks</strong>
