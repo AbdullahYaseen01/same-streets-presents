@@ -17,6 +17,14 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../assets/fonts/Montserrat-Regular.ttf) format('truetype');
+}
+
 /* Same Streets Presents — charcoal rooms, cream type, mustard road lines, stage color. */
 
 :root {
@@ -27,8 +35,9 @@
   --cream-dim: #e4d8cb;
   --muted: #cbbfb2;
   --muted-2: #8f8478;
-  --mustard: #f0b429;
-  --mustard-2: #ffd56a;
+  --mustard: #c48a16;
+  --mustard-2: #e2b34d;
+  --photo-tone: grayscale(1) sepia(0.62) saturate(2.6) hue-rotate(6deg) brightness(0.62) contrast(1.08);
   --ember: #ff4d2e;
   --magenta: #ff3d8a;
   --teal: #2ee6c7;
@@ -51,10 +60,10 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   min-height: 100%;
-  font-family: var(--sans);
-  font-size: 1.2rem;
-  line-height: 1.28;
-  letter-spacing: 0.04em;
+  font-family: "Montserrat", "Segoe UI", sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
   background:
     radial-gradient(900px 420px at 100% -10%, rgba(255, 61, 138, 0.16), transparent 55%),
     radial-gradient(700px 380px at -10% 20%, rgba(46, 230, 199, 0.08), transparent 50%),
@@ -125,11 +134,18 @@ button { cursor: pointer; }
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  color: var(--mustard);
-  font-size: 0.74rem;
-  font-weight: 600;
-  letter-spacing: 0.26em;
+  color: var(--mustard-2);
+  font-family: "Bebas Neue", "Arial Narrow", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
+}
+
+h1 {
+  font-family: "Bebas Neue", "Arial Narrow", Impact, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
 }
 
 .pulse {
@@ -654,7 +670,7 @@ h3 {
   align-items: end;
 }
 
-.intro-figure { grid-column: 1 / -1; margin: 0.6rem 0 0; }
+.intro-figure { position: relative; grid-column: 1 / -1; margin: 0.6rem 0 0; }
 
 .intro-figure img {
   width: 100%;
@@ -691,23 +707,27 @@ h3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -2;
+  z-index: 0;
   transition: transform 0.8s ease;
-  filter: saturate(1.15) contrast(1.04);
+  filter: var(--photo-tone);
 }
 
 .do-card::after {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: -1;
-  background: linear-gradient(180deg, rgba(14, 12, 10, 0.05) 20%, rgba(14, 12, 10, 0.88) 100%);
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(8, 7, 6, 0.18) 12%, rgba(8, 7, 6, 0.86) 100%),
+    url("../assets/style/grain.webp");
+  background-size: auto, 240px;
 }
 
 .do-card:hover img { transform: scale(1.07); }
 
 .do-bar {
   position: absolute;
+  z-index: 2;
   left: 0;
   top: 0;
   bottom: 0;
@@ -715,8 +735,11 @@ h3 {
   background: var(--bar, var(--mustard));
 }
 
+.do-copy { position: relative; z-index: 2; }
+
 .do-index {
   position: absolute;
+  z-index: 2;
   top: 1rem;
   left: 1.2rem;
   font-family: var(--display);
@@ -820,7 +843,7 @@ h3 {
   height: 100%;
   min-height: 460px;
   object-fit: cover;
-  filter: saturate(1.12);
+  filter: var(--photo-tone);
   transition: transform 0.8s ease;
 }
 
@@ -828,6 +851,7 @@ h3 {
 
 .play {
   position: absolute;
+  z-index: 3;
   left: 50%;
   top: 50%;
   width: 108px;
@@ -976,6 +1000,8 @@ h3 {
 .belief p { color: var(--muted); margin-top: 0.7rem; }
 
 .lane {
+  position: relative;
+  isolation: isolate;
   min-height: 360px;
   padding: 1.4rem;
   display: flex;
@@ -983,11 +1009,19 @@ h3 {
   align-items: flex-start;
   gap: 0.9rem;
   background-image:
-    radial-gradient(420px 200px at 100% 0%, color-mix(in srgb, var(--accent) 58%, transparent), transparent 64%),
-    linear-gradient(180deg, rgba(14, 12, 10, 0.15), rgba(14, 12, 10, 0.82)),
-    var(--photo);
+    radial-gradient(420px 200px at 100% 0%, color-mix(in srgb, var(--accent) 42%, transparent), transparent 64%),
+    linear-gradient(180deg, rgba(8, 7, 6, 0.28), rgba(8, 7, 6, 0.84));
+}
+
+.lane::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: var(--photo);
   background-size: cover;
   background-position: center;
+  filter: var(--photo-tone);
 }
 
 .lane p { color: rgba(246, 239, 230, 0.9); max-width: 42ch; }
@@ -1110,7 +1144,7 @@ h3 {
   gap: 0.75rem;
 }
 
-.photo-grid figure { margin: 0; }
+.photo-grid figure { position: relative; margin: 0; }
 
 .photo-grid img {
   display: block;
@@ -1859,6 +1893,149 @@ select:focus { border-color: var(--mustard); }
   .about-hero-portrait figcaption { right: 5.2rem; }
   .player-frame,
   .player-frame img { min-height: 320px; }
+}
+
+/* Style tile: torn edges, tape, grain, road, cord, marker. Photos share one dark amber tone. */
+
+h1 { font-family: "Bebas Neue", "Arial Narrow", Impact, sans-serif; font-weight: 400; letter-spacing: 0.02em; }
+
+.hero-slide,
+.page-hero-media,
+.invite-bg,
+.pit-media,
+.intro-figure img,
+.photo-grid img,
+.founder-frame img,
+.about-hero-photo,
+.story-photo {
+  filter: var(--photo-tone);
+}
+
+.hero-slide[data-grade]::after,
+.page-hero[data-grade]::after,
+.page-hero::after,
+.invite::after {
+  background: linear-gradient(90deg, rgba(8, 7, 6, 0.9) 0%, rgba(8, 7, 6, 0.55) 52%, rgba(8, 7, 6, 0.34) 100%);
+}
+
+.hero-lights { opacity: 0.28; }
+.hero-lights i,
+.hero-lights i:nth-child(2),
+.hero-lights i:nth-child(3) { background: #c48a16; opacity: 0.2; }
+
+.hero-slides::after,
+.page-hero-media::after,
+.invite-bg::after,
+.pit-media::after,
+.about-hero-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: url("../assets/style/grain.webp") center / 260px repeat;
+  opacity: 0.2;
+  mix-blend-mode: screen;
+}
+
+.intro-figure::after,
+.photo-grid figure::after,
+.player-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: inherit;
+  background:
+    linear-gradient(180deg, rgba(8, 7, 6, 0.08), rgba(8, 7, 6, 0.48)),
+    url("../assets/style/grain.webp");
+  background-size: auto, 240px;
+}
+
+.tear {
+  height: 36px;
+  background: #0e0c0a url("../assets/style/tear.webp") center top / 100% auto no-repeat;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 132px;
+  height: 11px;
+  margin-top: 0.4rem;
+  background: url("../assets/style/tear.webp") left top / 132px auto no-repeat;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.band-cream h2::after { filter: brightness(0); opacity: 0.45; }
+
+#what .do-card:first-child::before,
+#session .player-frame::before,
+.founder-frame::after,
+#room .photo-grid figure:first-child::before,
+#lanes .lane:first-child::after {
+  content: "";
+  position: absolute;
+  z-index: 4;
+  width: 112px;
+  height: 42px;
+  background: url("../assets/style/tape.webp") center / contain no-repeat;
+  pointer-events: none;
+  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.35));
+}
+
+#what .do-card:first-child::before { top: 16px; right: 18px; transform: rotate(8deg); }
+#session .player-frame::before { top: 18px; left: 16px; transform: rotate(-10deg); }
+.founder-frame::after { top: 14px; right: 8%; transform: rotate(7deg); }
+#room .photo-grid figure:first-child::before { top: 12px; left: 12px; transform: rotate(-8deg); }
+#lanes .lane:first-child::after { top: 14px; right: 14px; transform: rotate(9deg); }
+
+#session { position: relative; }
+#session::before,
+.page-sessions .cord {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  width: min(320px, 42vw);
+  height: 86px;
+  right: max(1rem, 3vw);
+  top: -1.4rem;
+  background: url("../assets/style/cord.webp") right center / contain no-repeat;
+  pointer-events: none;
+}
+
+.page-sessions .cord { top: auto; bottom: 1.2rem; right: 4vw; }
+
+.has-road {
+  background-color: #0e0c0a;
+  background-image:
+    linear-gradient(180deg, rgba(8, 7, 6, 0.9), rgba(8, 7, 6, 0.94)),
+    url("../assets/style/road.webp");
+  background-size: auto, 460px;
+}
+
+.site-header { overflow: visible; }
+
+.header-actions::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  width: 68px;
+  height: 30px;
+  right: 10px;
+  top: -14px;
+  transform: rotate(-8deg);
+  background: url("../assets/style/marker.webp") center / contain no-repeat;
+  pointer-events: none;
+}
+
+@media (max-width: 760px) {
+  .header-actions::before,
+  #session::before,
+  .page-sessions .cord { display: none; }
+  .tear { height: 24px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
