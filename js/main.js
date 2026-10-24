@@ -11,7 +11,7 @@ const UPCOMING_SHOWS = [
   //   city: "Cleveland, Tennessee",
   //   lineup: ["Artist One", "Artist Two"],
   //   admission: "Tickets at the door",
-  //   image: "assets/photos/stage.webp",
+  //   image: "assets/photos/client-beam.webp",
   //   tickets: "https://example.com/tickets"
   // }
 ];
@@ -332,7 +332,7 @@ function initSession() {
   if (library && SESSION_LIBRARY.length) {
     library.innerHTML = SESSION_LIBRARY.map((item) => `
       <article class="session-card" data-tags="${esc(item.tags || "live")}">
-        <img src="${esc(item.image || "assets/photos/stage.webp")}" alt="">
+        <img src="${esc(item.image || "assets/photos/client-beam.webp")}" alt="">
         <div class="card-body">
           <p class="badge">${esc(item.artist || "Session")}</p>
           <h3>${esc(item.title)}</h3>
