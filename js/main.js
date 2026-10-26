@@ -80,10 +80,9 @@ function initHero() {
   const caption = hero.querySelector("[data-hero-caption]");
   const pauseBtn = hero.querySelector("[data-slide-pause]");
   const lines = [
-    "The room · Cleveland, Tennessee",
-    "Up close · the artist",
-    "Turned up · the noise",
-    "The night · show up"
+    "Music connects people",
+    "Every scene starts somewhere",
+    "Same streets · new scene"
   ];
   const duration = 7000;
   let index = 0;
