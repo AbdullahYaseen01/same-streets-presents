@@ -2066,22 +2066,6 @@ h2::after {
   .tear { height: 72px; }
   h2::after { width: min(240px, 72%); height: 28px; }
   .btn-primary { min-height: 48px; padding: 0.85rem 1.15rem 0.9rem; }
-
-  .hero.hero-show-wall { justify-content: flex-start; }
-  .hero.hero-show-wall .hero-slide:first-child {
-    background-size: 100% auto;
-    background-position: center var(--header);
-    background-repeat: no-repeat;
-    transform: none;
-    animation: none;
-  }
-  .hero.hero-show-wall .hero-layout {
-    padding-top: calc(var(--header) + 67vw + 0.85rem);
-  }
-  .hero.hero-show-wall .hero-slide:first-child::after {
-    background: linear-gradient(180deg, rgba(8, 7, 6, 0.08) 0%, rgba(8, 7, 6, 0) 16%, rgba(8, 7, 6, 0) 48%, rgba(8, 7, 6, 0.62) 64%, rgba(8, 7, 6, 0.94) 100%);
-  }
-  .hero.hero-show-wall .hero-lights { opacity: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
