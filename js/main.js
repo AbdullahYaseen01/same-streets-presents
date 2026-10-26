@@ -127,6 +127,7 @@ function initHero() {
         kicker.classList.remove("is-swapping");
       }, reducedMotion ? 0 : 180);
     }
+    hero.classList.toggle("hero-show-wall", index === 0);
     paintProgress();
   };
 
