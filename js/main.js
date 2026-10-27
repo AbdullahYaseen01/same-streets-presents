@@ -492,6 +492,7 @@ function initSpotlight() {
   if (img && ARTIST_SPOTLIGHT.image) {
     img.src = ARTIST_SPOTLIGHT.image;
     img.alt = ARTIST_SPOTLIGHT.name ? ARTIST_SPOTLIGHT.name + "." : "";
+    img.closest(".spotlight-frame")?.removeAttribute("hidden");
   }
 }
 
