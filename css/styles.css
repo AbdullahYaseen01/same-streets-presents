@@ -1058,6 +1058,13 @@ h3 {
   filter: none;
 }
 
+.spotlight-badge {
+  width: min(168px, 22vw);
+  height: auto;
+  flex: 0 0 auto;
+  align-self: center;
+}
+
 .page-sessions .page-hero::before { content: none; }
 
 .sessions-art {
