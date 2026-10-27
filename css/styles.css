@@ -2068,6 +2068,16 @@ h2::after {
   .btn-primary { min-height: 48px; padding: 0.85rem 1.15rem 0.9rem; }
 }
 
+.hero .hero-slide::after {
+  background: linear-gradient(90deg, rgba(8, 7, 6, 0.86) 0%, rgba(8, 7, 6, 0.64) 50%, rgba(8, 7, 6, 0.44) 100%);
+}
+
+@media (max-width: 760px) {
+  .hero .hero-slide::after {
+    background: linear-gradient(180deg, rgba(8, 7, 6, 0.34) 0%, rgba(8, 7, 6, 0.58) 34%, rgba(8, 7, 6, 0.74) 100%);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *,
