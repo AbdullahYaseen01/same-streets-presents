@@ -19,6 +19,15 @@ const UPCOMING_SHOWS = [
 const FEATURED_SESSION = null;
 // { artist, title, intro, image, youtubeId }
 
+const ARTIST_SPOTLIGHT = null;
+// Replace this when the featured artist changes.
+// {
+//   name: "Artist name",
+//   genre: "Genre",
+//   bio: "A short bio.",
+//   image: "assets/photos/spotlight.webp"
+// }
+
 const SESSION_LIBRARY = [];
 // { artist, title, tags: "live acoustic", image, blurb }
 
@@ -470,6 +479,22 @@ function initList() {
   });
 }
 
+function initSpotlight() {
+  const root = document.querySelector("[data-spotlight]");
+  if (!root || !ARTIST_SPOTLIGHT) return;
+  const img = root.querySelector("[data-spotlight-image]");
+  const name = root.querySelector("[data-spotlight-name]");
+  const genre = root.querySelector("[data-spotlight-genre]");
+  const bio = root.querySelector("[data-spotlight-bio]");
+  if (name) name.textContent = ARTIST_SPOTLIGHT.name || "";
+  if (genre) genre.textContent = ARTIST_SPOTLIGHT.genre || "";
+  if (bio) bio.textContent = ARTIST_SPOTLIGHT.bio || "";
+  if (img && ARTIST_SPOTLIGHT.image) {
+    img.src = ARTIST_SPOTLIGHT.image;
+    img.alt = ARTIST_SPOTLIGHT.name ? ARTIST_SPOTLIGHT.name + "." : "";
+  }
+}
+
 function initYear() {
   const year = String(new Date().getFullYear());
   document.querySelectorAll("[data-year]").forEach((node) => {
@@ -481,6 +506,7 @@ initHeader();
 initHero();
 initShows();
 initSession();
+initSpotlight();
 initLightbox();
 initForms();
 initList();

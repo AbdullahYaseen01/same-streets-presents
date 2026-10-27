@@ -626,7 +626,8 @@ h3 {
   contain-intrinsic-size: auto 720px;
 }
 
-#artist-form {
+#artist-form,
+#spotlights {
   content-visibility: visible;
   scroll-margin-top: calc(var(--header) + 1rem);
 }
@@ -1022,8 +1023,49 @@ h3 {
     linear-gradient(180deg, rgba(8, 7, 6, 0.38) 0%, rgba(8, 7, 6, 0.5) 46%, rgba(8, 7, 6, 0.82) 100%),
     var(--photo);
   background-size: auto, cover;
-  background-position: center;
+  background-position: center, var(--photo-pos, center);
 }
+
+.lane-credit {
+  margin-top: auto;
+  font-family: "Bebas Neue", "Arial Narrow", sans-serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 1.05rem;
+  color: #f6efe6;
+}
+
+.lane .lane-credit + .btn { margin-top: 0.35rem; }
+
+.spotlight {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(1.2rem, 3vw, 2.4rem);
+  align-items: center;
+}
+
+.spotlight-frame {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 26px;
+  border: 1px solid var(--line);
+}
+
+.spotlight-frame img,
+.spotlight-mark {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: none;
+}
+
+.spotlight-mark {
+  width: min(240px, 46%);
+  border-radius: 14px;
+  align-self: end;
+}
+
+.spotlight-copy h3 { font-size: clamp(2.1rem, 4vw, 3.3rem); }
 
 .lane::before { content: none; }
 
@@ -1841,6 +1883,7 @@ select:focus { border-color: var(--mustard); }
   .intro-grid,
   .do-grid,
   .session-grid,
+  .spotlight,
   .contact-grid,
   .story-grid,
   .founder-stage,
