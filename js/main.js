@@ -7,10 +7,12 @@ const UPCOMING_SHOWS = [
     title: "Emo Night",
     date: "2026-12-11",
     time: "Doors 6:30 PM",
+    place: "Cleveland",
     venue: "The Art House Project",
     city: "Cleveland, Tennessee",
     address: "Old Woolen Mill, 445 Church Street SE, Cleveland, TN 37311",
     lineup: ["My Captain, My King", "Nectar Collector"],
+    blurb: "My Captain, My King and Nectar Collector are bringing the underground emo energy for a night of heavy sounds and good vibes. Come get in your feels.",
     admission: "$12 presale · $15 door · All ages",
     image: "assets/photos/emo-night.webp",
     tickets: "https://www.simpletix.com/e/emo-night-tickets-300487"
@@ -207,38 +209,30 @@ function showDateParts(dateStr) {
     return { month: "Date", day: "—", weekday: dateStr };
   }
   return {
-    month: when.toLocaleString("en-US", { month: "short" }),
-    day: String(when.getDate()).padStart(2, "0"),
+    month: when.toLocaleString("en-US", { month: "long" }),
+    day: String(when.getDate()),
     weekday: when.toLocaleString("en-US", { weekday: "long" })
   };
 }
 
-function ticketMarkup(show, index) {
+function ticketMarkup(show) {
   const when = showDateParts(show.date);
-  const lineup = (show.lineup || []).join(" · ");
   const tickets = safeUrl(show.tickets);
-  const image = show.image ? esc(show.image) : "";
-  const art = image
-    ? `<div class="ticket-art"><img src="${image}" alt="${esc(show.title)} flyer"></div>`
-    : "";
+  const blurb = show.blurb || (show.lineup || []).join(" · ");
   const ticketLink = tickets
     ? `<a class="btn btn-primary" href="${esc(tickets)}" target="_blank" rel="noopener noreferrer">Get tickets <span aria-hidden="true">→</span></a>`
     : "";
-  return `<article class="ticket${image ? " has-art" : ""}">
-    ${art}
+  return `<article class="ticket">
     <div class="ticket-date">
       <span>${esc(when.month)}</span>
       <strong>${esc(when.day)}</strong>
-      <em>${esc(show.time || when.weekday)}</em>
+      <em>${esc(show.place || "Cleveland")}</em>
     </div>
     <div class="ticket-body">
       <h3>${esc(show.title)}</h3>
-      ${lineup ? `<p class="ticket-lineup">${esc(lineup)}</p>` : ""}
-      <p class="ticket-venue">${esc([show.venue, show.city].filter(Boolean).join(" · "))}</p>
+      ${blurb ? `<p class="ticket-venue">${esc(blurb)}</p>` : ""}
     </div>
     <div class="ticket-side">
-      ${show.admission ? `<p class="price">${esc(show.admission)}</p>` : ""}
-      <button class="btn btn-ghost" type="button" data-show-index="${index}">Show details</button>
       ${ticketLink}
     </div>
   </article>`;

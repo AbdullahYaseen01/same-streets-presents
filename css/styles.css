@@ -765,7 +765,7 @@ h3 {
 
 .ticket {
   display: grid;
-  grid-template-columns: 92px 1fr auto;
+  grid-template-columns: 128px 1fr auto;
   gap: 1.1rem;
   align-items: center;
   padding: 1rem 1.15rem;
