@@ -3,17 +3,18 @@
    Forms open a draft to samestreetspresents@gmail.com in the visitor's email app. */
 
 const UPCOMING_SHOWS = [
-  // {
-  //   title: "Show title",
-  //   date: "2026-11-14",
-  //   time: "8:00 PM",
-  //   venue: "Venue name",
-  //   city: "Cleveland, Tennessee",
-  //   lineup: ["Artist One", "Artist Two"],
-  //   admission: "Tickets at the door",
-  //   image: "assets/photos/client-beam.webp",
-  //   tickets: "https://example.com/tickets"
-  // }
+  {
+    title: "Emo Night",
+    date: "2026-12-11",
+    time: "Doors 6:30 PM",
+    venue: "The Art House Project",
+    city: "Cleveland, Tennessee",
+    address: "Old Woolen Mill, 445 Church Street SE, Cleveland, TN 37311",
+    lineup: ["My Captain, My King", "Nectar Collector"],
+    admission: "$12 presale · $15 door · All ages",
+    image: "assets/photos/emo-night.webp",
+    tickets: "https://www.simpletix.com/e/emo-night-tickets-300487"
+  }
 ];
 
 const FEATURED_SESSION = null;
@@ -218,7 +219,7 @@ function ticketMarkup(show, index) {
   const tickets = safeUrl(show.tickets);
   const image = show.image ? esc(show.image) : "";
   const art = image
-    ? `<div class="ticket-art"><img src="${image}" alt=""></div>`
+    ? `<div class="ticket-art"><img src="${image}" alt="${esc(show.title)} flyer"></div>`
     : "";
   const ticketLink = tickets
     ? `<a class="btn btn-primary" href="${esc(tickets)}" target="_blank" rel="noopener noreferrer">Get tickets <span aria-hidden="true">→</span></a>`
@@ -285,6 +286,7 @@ function initShows() {
       <h3>${esc(show.title)}</h3>
       <p>${esc(when.weekday)} · ${esc(when.month)} ${esc(when.day)} · ${esc(show.time || "Time coming")}</p>
       <p>${esc([show.venue, show.city].filter(Boolean).join(" · "))}</p>
+      ${show.address ? `<p>${esc(show.address)}</p>` : ""}
       ${(show.lineup || []).length ? `<p>${esc(show.lineup.join(" · "))}</p>` : ""}
       ${show.admission ? `<p class="price">${esc(show.admission)}</p>` : ""}
       ${tickets ? `<a class="btn btn-primary" href="${esc(tickets)}" target="_blank" rel="noopener noreferrer">Get tickets <span aria-hidden="true">→</span></a>` : `<a class="btn btn-primary" href="contact.html?topic=booking">Let's make a show <span aria-hidden="true">→</span></a>`}

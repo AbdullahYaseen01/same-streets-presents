@@ -779,12 +779,13 @@ h3 {
 .ticket.has-art { grid-template-columns: 148px 92px 1fr auto; }
 
 .ticket-art {
-  height: 112px;
+  height: 132px;
   border-radius: 16px;
   overflow: hidden;
+  background: #14110e;
 }
 
-.ticket-art img { width: 100%; height: 100%; object-fit: cover; }
+.ticket-art img { width: 100%; height: 100%; object-fit: contain; object-position: center; }
 
 .ticket-date {
   text-align: center;
