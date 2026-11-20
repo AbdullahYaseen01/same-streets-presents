@@ -1059,6 +1059,24 @@ h3 {
   filter: none;
 }
 
+.session-player {
+  position: relative;
+  width: min(100%, 960px);
+  aspect-ratio: 16 / 9;
+  border-radius: 26px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #0e0c0a;
+}
+
+.session-player iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .spotlight-badge {
   width: min(168px, 22vw);
   height: auto;

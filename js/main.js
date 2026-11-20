@@ -19,17 +19,19 @@ const UPCOMING_SHOWS = [
   }
 ];
 
-const FEATURED_SESSION = null;
-// { artist, title, intro, image, youtubeId }
+const FEATURED_SESSION = {
+  artist: "Nectar Collector",
+  title: "Same Streets Sessions Episode 1",
+  youtubeId: "SGOGUAaJZsw"
+};
 
-const ARTIST_SPOTLIGHT = null;
-// Replace this when the featured artist changes.
-// {
-//   name: "Artist name",
-//   genre: "Genre",
-//   bio: "A short bio.",
-//   image: "assets/photos/spotlight.webp"
-// }
+const ARTIST_SPOTLIGHT = {
+  name: "Shakin’ Atoms",
+  genre: "Rock",
+  bio: "Shakin’ Atoms is a four piece rock band, with a powerhouse vocalist, that reimagines early 2000’s pop songs as hard rock.",
+  image: "assets/photos/spotlight-shakin-atoms.webp",
+  url: "https://www.facebook.com/share/1b8D6ZNSdE/?mibextid=wwXIfr"
+};
 
 const SESSION_LIBRARY = [];
 // { artist, title, tags: "live acoustic", image, blurb }
@@ -485,6 +487,11 @@ function initSpotlight() {
   if (name) name.textContent = ARTIST_SPOTLIGHT.name || "";
   if (genre) genre.textContent = ARTIST_SPOTLIGHT.genre || "";
   if (bio) bio.textContent = ARTIST_SPOTLIGHT.bio || "";
+  if (ARTIST_SPOTLIGHT.url) {
+    root.querySelectorAll("[data-spotlight-link]").forEach((link) => {
+      link.href = ARTIST_SPOTLIGHT.url;
+    });
+  }
   if (img && ARTIST_SPOTLIGHT.image) {
     img.src = ARTIST_SPOTLIGHT.image;
     img.alt = ARTIST_SPOTLIGHT.name ? ARTIST_SPOTLIGHT.name + "." : "";
